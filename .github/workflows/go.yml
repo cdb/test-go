@@ -10,6 +10,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+    - name: New thing added by forker
+      run: echo hi
 
     - name: Set up Go 1.13
       uses: actions/setup-go@v1

